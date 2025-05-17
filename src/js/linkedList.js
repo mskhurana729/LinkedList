@@ -120,6 +120,21 @@ class LinkedList {
     }
     return null;
   }
+  toString() {
+    if (!this.firstNode) {
+      return null;
+    }
+    let currentNode = this.firstNode;
+    let str = `( ${currentNode.data} )`;
+
+    while (currentNode) {
+      currentNode = currentNode.nextNode;
+      if (currentNode) {
+        str += ` -> ( ${currentNode.data} )`;
+      }
+    }
+    return str;
+  }
 }
 
 export default LinkedList;
