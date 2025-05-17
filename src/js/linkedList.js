@@ -135,6 +135,24 @@ class LinkedList {
     }
     return str;
   }
+  insertAt(value, index) {
+    let newNode = new Node(value);
+    if (!this.firstNode) {
+      return null;
+    }
+    let currentNode = this.firstNode;
+    let previousNode = null;
+
+    let currentIndex = 0;
+    while (currentIndex < index) {
+      previousNode = currentNode;
+      currentNode = currentNode.nextNode;
+      currentIndex++;
+    }
+    previousNode.nextNode = newNode;
+    newNode.nextNode = currentNode;
+    return;
+  }
 }
 
 export default LinkedList;

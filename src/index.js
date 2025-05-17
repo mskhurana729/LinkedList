@@ -21,3 +21,4 @@ console.log(list1.contains("hell1"));
 console.log(list1.contains("hello"));
 console.log(list1.find("hello"));
 console.log(list1.toString());
+list1.insertAt("new", 1);
