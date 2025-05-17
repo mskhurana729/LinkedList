@@ -103,6 +103,23 @@ class LinkedList {
     }
     return false;
   }
+  find(value) {
+    if (!this.firstNode) {
+      return null;
+    }
+    let currentIndex = 0;
+    let currentNode = this.firstNode;
+
+    while (currentNode) {
+      if (currentNode.data === value) {
+        return currentIndex;
+      } else {
+        currentIndex++;
+        currentNode = currentNode.nextNode;
+      }
+    }
+    return null;
+  }
 }
 
 export default LinkedList;
