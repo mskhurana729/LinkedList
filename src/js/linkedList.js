@@ -40,6 +40,55 @@ class LinkedList {
     }
     return currentIndex;
   }
+  head() {
+    if (!this.firstNode) {
+      return null;
+    }
+    return this.firstNode;
+  }
+  tail() {
+    if (!this.firstNode) {
+      return null;
+    }
+    let currentNode = this.firstNode;
+    while (currentNode.nextNode) {
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
+  at(index) {
+    if (!this.firstNode) {
+      return null;
+    }
+    let currentIndex = 0;
+    let currentNode = this.firstNode;
+    while (currentNode) {
+      if (currentIndex === index) {
+        return currentNode;
+      } else {
+        currentNode = currentNode.nextNode;
+        currentIndex++;
+      }
+    }
+    return null;
+  }
+  pop() {
+    if (!this.firstNode) {
+      return;
+    }
+    if (!this.firstNode.nextNode) {
+      this.firstNode = null;
+    }
+
+    let currentNode = this.firstNode;
+    let previousNode = this.firstNode;
+    while (currentNode.nextNode) {
+      previousNode = currentNode;
+      currentNode = currentNode.nextNode;
+    }
+    previousNode.nextNode = null;
+    return;
+  }
 }
 
 export default LinkedList;

@@ -12,3 +12,8 @@ list1.prepend("sir");
 list1.prepend("sir2");
 
 console.log(list1.size());
+console.log(list1.tail());
+console.log(list1.head());
+console.log(list1.at(1));
+// list1.pop();
+// console.log(list1);
